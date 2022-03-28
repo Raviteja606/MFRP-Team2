@@ -1,0 +1,86 @@
+a:hover {
+    border-radius: 10px;
+    color:lightskyblue
+  }
+  a{
+      color:#ffff
+  }
+  /*code to change background color*/
+   
+  .navbar {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 149, 166, 1) 0%,
+      rgb(25, 51, 73) 100%
+    );
+  }
+  h1{
+      font-family: cursive;
+  }
+  .title{
+      margin-left: 50px;
+      color: #fff;
+  }
+.cart_btn{
+    background-color:rgba(0, 149, 166, 1);
+    color: aliceblue;
+}
+.card{
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+    /* height:400px;
+    width: 300px; */
+}
+div{
+    row-gap: 30px;
+}
+.card-img-top:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+.btn1{
+    height: 30px;
+    width: 30px;
+    left: 0px;
+    top: 0px;
+    border-radius: 66px;
+    border: 1px solid rgba(73, 73, 73, 1);
+    box-sizing: border-box; 
+}
+.btn2{
+    height: 30px;
+    width: 30px;
+    left: 0px;
+    top: 0px;
+    border-radius: 66px;
+    border: 1px solid rgba(73, 73, 73, 1);
+    box-sizing: border-box; 
+}
+.button{
+    background-color: rgba(0, 149, 166, 1);
+    color:#fff;
+}
+.box-shadow{
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+.byn{
+    text-decoration: none;
+    margin-right: 100px;
+    color:#fff
+  }
+ 
+
+.item img {
+    width: 135px;
+    height:128px
+}
+
+.item {
+    margin: 0px 15px;
+    text-align: center;
+}
+
+.item a:hover {
+    color: blue;
+}

@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"/>
+<nav class="navbar navbar-expand-sm navbar-dark" style="height: 90px;">
+  <h1 class="title" style="font-family: cursive;">Go Pharmeasy</h1>
+  <a routerLink="/home" style="text-decoration: none;margin-left: 50px;">Home</a>
+  <a href="" routerLink="/products" style="text-decoration: none;margin-left: 50px;">Products</a>
+  <a href="" routerLink="/contactus" style="text-decoration: none;margin-left: 50px;margin-right: 350px;">Contact us</a>
+  <button routerLink="cart" class="byn btn" >
+    <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+    <div style="font-size: 14px;" class="badge bg-danger">{{totalItem}}</div>
+</button>
+  <button routerLink="/login" class="btn mx-2" style="text-decoration: none;background-color: rgb(186, 221, 221)">Logout</button>
+  </nav> <br> 
+<ng-container *ngIf="products.length!=0" >
+    <div class="container">
+    <div class="card-table">
+        <div class="cart-product">
+        <table class="table table-responsive" id="product">
+            <thead>
+                <tr>
+                    <th>Sr.no</th>
+                    <th>Product Name</th>
+                    <th>Product Image</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>Drug</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of products;let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.ProductName}}</td>
+                    <td><img style="width:120px;" src="{{item.Img}}" alt="" ></td>
+                    <td style="width:25%;">{{item.Brand}}</td>
+                    <td style="width:12%;">{{item.Price}}</td>
+                    <td style="width:12%;">{{item.Drug}}</td>
+                    <td style="width:12%;">{{item.qnt}}</td>
+                    <td>
+                        <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4"></td>
+                    <td><button (click)="emptycart()" class="btn btn-danger">Empty Cart</button></td>
+                    <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
+                    <!-- <td><button  onclick="document.getElementById('id01').style.display='block'"   class="btn btn-success">Checkout</button></td> -->
+                    <td><button  mat-button (click)="openDialog()"  class="btn btn-success">Checkout</button></td>
+                    <td><strong>Grand Total:₹{{grandTotal}}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="products.length==0">
+<div class="container">
+    <div class="card">
+        <h5 class="card-title">My Cart</h5>
+    </div>
+    <div class="center">
+        <img src="assets/emptycart.webp" alt="" style="height: 230px;">
+        <h4>Your cart is empty!</h4>
+        <h6>Add item to it now</h6>
+        <button routerLink="/products" class="btn btn-primary">Shop Now</button>
+    </div>
+</div>
+</ng-container>
+
+
+
+
+<!-- 
+</form>
+</div> -->
+
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+
+

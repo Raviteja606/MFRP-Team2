@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-sm navbar-dark" style="height: 90px;">
+    <h1 class="title" style="font-family: cursive;color: #fff;">Go Pharmeasy</h1>
+    <a routerLink="/home" style="text-decoration: none;margin-left: 50px;">Home</a>
+    <a href="" routerLink="/products" style="text-decoration: none;margin-left: 50px;">Products</a>
+    <a href="" routerLink="/contactus" style="text-decoration: none;margin-left: 50px;margin-right: 350px;">Contact
+        us</a>
+    <button routerLink="/cart" class="byn btn">
+        <i style="font-size: 30px;color: #fff;" class="fas fa-cart-plus"></i>
+        <div style="font-size: 14px;" class="badge bg-danger">{{totalItem}}</div>
+    </button>
+    <button routerLink="/login" class="btn  mx-2" style="text-decoration: none;background-color: rgb(186, 221, 221)">Logout</button>
+</nav>
+<div class="container-fluid padding" *ngFor="let prod of productdata">
+    <br />
+    <div class="row padding">
+        <div class="col-md-3">
+            <div class="card1">
+                <img class="card-img-top" src="{{prod.Img}}">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card2">
+                <div class="m1">
+                    <h3>{{prod.ProductName}}</h3>
+                </div>
+                <ul class="a0">
+                    <li class="a1"><strong>Price:</strong> ₹{{prod.Price}}</li><br>
+                    <li class="a1"><strong>Brand:</strong> {{prod.Brand}}</li><br>
+                    <li class="a2"><strong>Drug:</strong> {{prod.Drug}}</li><br>
+                    <li class="a3"><strong>Manufacturing Date:</strong> {{prod.ManufacturingDate|date}}</li><br>
+                    <li class="a4"><strong>Expire Date:</strong> {{prod.ExpiryDate|date}}</li><br>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="col col-5-12 dec1">
+                    <div class="dec2">
+                        <div class="dec3">
+                            <strong>Description:</strong>
+                            <p>{{prod.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+        <button class="button btn-primary" (click)="redirect()"><< Products</button>
+        </div>

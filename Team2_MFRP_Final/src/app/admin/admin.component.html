@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-sm navbar-dark" style="height: 90px;">
+    <h1 class="title" style="margin-right: 70px;">Go Pharmeasy</h1>
+    <a href=""  routerLink="/addproduct" style="margin-right: 600px;text-decoration: none;">Add Product</a>
+    <button routerLink="/login" class="btn mx-2" style="text-decoration: none;background-color: rgb(186, 221, 221)">Logout</button>
+</nav> 
+<body >
+
+  <br>
+     <div >
+    <input type="search" id="search" (search)="search()" #val style="margin-left:38%;border: 1px solid black;">
+    <button style="background-color:green;color: #f2f2f2;" (click)="Search(val.value)"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </div>
+    <br>
+  <table id="product">
+    <tr style="background-color:lightblue;">
+
+      <th>Product Id</th>
+      <th>Product Name</th>
+      <th>Brand</th>
+      <th>Drug</th>
+      <th>Price</th>
+      <th>Manufacturing Date</th>
+      <th>Expiry Date</th>
+      <th>Quantity</th>
+      <th>Category</th>
+      <th>Operations</th>
+    </tr>
+
+    <tr *ngFor="let item of (sample)">
+
+      <td>{{item.ProductId}}</td>
+      <td>{{item.ProductName}}</td>
+      <td>{{item.Brand}}</td>
+      <td>{{item.Drug}}</td>
+      <td>{{item.Price}}</td>
+      <td>{{item.ManufacturingDate|date}}</td>
+      <td>{{item.ExpiryDate|date}}</td>
+      <td>{{item.qnt}}</td>
+      <td>{{item.category}}</td>
+      <td> <button class="btn" (click)="deletemed(item['_id'])" > <i  class="fa fa-trash"
+
+        style="font-size: 20px; color: red;"></i></button>&nbsp;
+    <a routerLink="/update/{{item._id}}"><i class="fa fa-edit"
+
+            style="font-size: 20px; color: rgba(57, 16, 238, 0.952);"></i></a>
+      </td>
+    </tr>
+
+  </table>
+
+</body>
+
+<router-outlet></router-outlet>

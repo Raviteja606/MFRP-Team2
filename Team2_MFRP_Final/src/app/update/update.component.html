@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-sm navbar-dark" style="height: 90px;">
+    <h1 class="title" style="margin-right: 800px;">Go Pharmeasy</h1>
+    <button routerLink="/login" class="btn btn-danger mx-2" style="text-decoration: none;">Logout</button>
+</nav> 
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" style="text-align: center;">
+    <strong>Success!</strong> Data Updated successfully
+  </div>
+  <form class="container"
+    style="width: 100%;margin-top: 2%; background-color: bisque; border: 1px solid black;text-align: center;"
+    [formGroup]="editForm" (ngSubmit)="update()">
+    <div style="margin: 5%;" class="form-group">
+      <input class="form-control" type="text" formControlName="ProductId" placeholder="Product ID"><br>
+      <input class="form-control" type="text" formControlName="ProductName" placeholder="Product Name"><br>
+      <input class="form-control" type="text" formControlName="Img" placeholder="Image"><br>
+        <input class="form-control" type="text" formControlName="Brand" name="Brand"  placeholder="Brand"><br>
+        <input class="form-control" type="text" formControlName="Drug" name="Drug" placeholder="Drug"><br>
+      <input class="form-control" type="text" formControlName="Price" placeholder="Price"><br>
+      <input class="form-control" type="text" formControlName="ManufacturingDate" placeholder="Manufacturing Date"><br>
+      <input class="form-control" type="text" formControlName="ExpiryDate" placeholder="Expiry Date"><br>
+      <input class="form-control" type="text" formControlName="qnt" placeholder="Quantity"><br>
+      <input class="form-control" type="text" formControlName="description" placeholder="Description"><br>
+      <input class="form-control" type="text" formControlName="category" placeholder="Category"><br>
+      <button class="form-control" type="submit" style="background-color:green;color: #f2f2f2;">Update</button>
+    </div>
+  </form>
+

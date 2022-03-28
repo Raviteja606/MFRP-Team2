@@ -1,0 +1,111 @@
+a:hover {
+  border-radius: 10px;
+  color:lightskyblue
+}
+a{
+    color:#ffff
+}
+/*code to change background color*/
+ 
+.navbar {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 149, 166, 1) 0%,
+    rgb(25, 51, 73) 100%
+  );
+  
+}
+.title{
+    margin-left: 50px;
+    color: #fff;
+}
+.byn{
+  text-decoration: none;
+  margin-right: 100px;
+  color:#fff
+}
+.card {
+  height: 60vh;
+  margin: 25px;
+  padding: 25px;
+}
+
+.center img {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  outline: none;
+  height: 162px;
+  width: 250px;
+  margin: 20px 0px;
+}
+
+h4,
+h6 {
+  font-weight: 400;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card-table {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: none;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: .25rem;
+}
+
+.center .btn {
+  font-size: 14px !important;
+  margin-top: 20px !important;
+  font-weight: 400;
+  padding: 12px 72px;
+  border-radius: 3px !important;
+}
+#product {
+font-family: sans-serif;
+border-collapse: collapse;
+width: 94%;
+margin:3%;
+}
+
+#product td,
+#product th {
+  border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#product tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#product tr:nth-child(odd) {
+background-color:rgb(240, 238, 227);
+}
+
+#product tr:hover {
+  background-color: #ddd;
+}
+
+#product th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: center;
+background-color: #387b80;
+color: white;
+}
+
+
+
+

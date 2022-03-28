@@ -1,0 +1,97 @@
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+/>
+<nav class="navbar navbar-expand-sm navbar-dark" style="height: 90px;">
+  <h1 class="title" style="margin-right: 70px;">Go Pharmeasy</h1>
+  <a href=""  style="margin-right: 600px;text-decoration: none;">Home</a>
+  <button routerLink="/login" class="btn btn-primary mx-2" style="text-decoration: none;">SignIn/up</button>
+</nav> 
+<div
+  class="text-center p-4"
+>
+  <div class="container">
+    <div class="row">
+      <div
+        class="m-auto col-lg-5 col-md-7 col-sm-9 col-xs-9 ps-4 pe-4 rounded"
+        style="background-color:transparent;background:  rgba(0, 0, 0, 0.2); "
+      >
+        <i class="fa fa-user p-3" style="font-size: 48px;color:white"></i>
+        <h5 style="color:white" >Login</h5>
+        <p style="color:white">Login by entering the information below</p>
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="form-group mt-3 px-2">
+            <div [ngClass]="{'has-error': formControls['Email'].touched && formControls['Email'].errors}" >
+              <input type="email" id="Email" class="form-control form-control-sm rounded" placeholder="Email Address"
+               formControlName="Email"   required/>
+            
+            <div *ngIf="formControls['Email'].touched && formControls['Email'].errors">
+              <div *ngIf="formControls['Email'].errors['required']" style="color: red;">Please enter Email</div>
+       </div>
+          </div>
+           
+          </div>
+          
+          <div [ngClass]="{ 'has-error': formControls['Pwd'].touched && formControls['Pwd'].errors}">
+          <div class="input-group mt-3 px-2">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="fas fa-lock"></i>
+              </span>
+            </div>
+            <input class="form-control form-control-sm rounded" type="password"  formControlName="Pwd"
+            placeholder="Password" required/>
+            <div *ngIf="formControls['Pwd'].touched && formControls['Pwd'].errors" class="help-block">
+              <div *ngIf="formControls['Pwd'].errors['required']" style="color: red;"><h6>Please enter Password</h6></div>
+              <div *ngIf="formControls['Pwd'].errors['minlength'] || formControls['Pwd'].errors['maxlength'] || formControls['Pwd'].errors['pattern']" style="color: red;">Please enter a valid Password</div>
+          </div>
+          </div>
+          </div>
+          <br>   
+          <div class="form-group mb-3 px-2">
+            <label style="float:left;color:white">Role</label>
+            <div [ngClass]="{ 'has-error': formControls['role'].touched && formControls['role'].errors}">
+              <select class="form-control form-control-sm rounded" placeholder="Role" formControlName="role" ngModel required>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+              </select>
+           <div *ngIf="formControls['role'].touched && formControls['role'].errors" class="help-block">
+               <div *ngIf="formControls['role'].errors['required']" style="color: red;"><h6>Please enter Role</h6></div>
+           </div>
+         </div>
+       
+          </div>
+          <div class="form-group px-2">
+            <span class="float-end">
+              <a class="link text-secondary" href="#">
+                <small>Forgot Password?</small></a
+              >
+            </span>
+          </div>
+          <br />
+          <div class="form-group">
+            <button class="btn btn-info m-2" type="submit" [disabled]="!loginForm.valid">
+              Login
+            </button>
+          </div>
+        </form>
+        <hr />
+        <div>
+          <h6 style="color:white">Don't have an account? Register here.</h6>
+          <button class="btn btn-info mb-3" routerLink="/signup">
+            Register
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="py-5 bg-dark">
+  <div class="container">
+    <p class="m-auto text-white" style="padding-left: 400px;">
+      Copyright 2021 @Raviteja @Faheem @Pavan @Dheeraj
+    </p>
+  </div>
+</footer>

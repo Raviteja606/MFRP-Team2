@@ -1,0 +1,33 @@
+a:hover {
+    border-radius: 10px;
+    color:lightskyblue
+  }
+  a{
+      color:#ffff
+  }
+  /*code to change background color*/
+   
+  .navbar {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 149, 166, 1) 0%,
+      rgb(25, 51, 73) 100%
+    );
+    
+  }
+  h1{
+      font-family: cursive;
+      font-size: xx-large;
+  }
+  .title{
+      margin-left: 50px;
+      color: #fff;
+  }
+  .byn{
+    text-decoration: none;
+    margin-right: 100px;
+  }
+  .text-center{
+    background: url("https://img.freepik.com/free-vector/customers-pharmacist-pharmacy-store-people-buying-medication-drugstore-flat-vector-illustration-service-treatment-pharmaceutics-concept_74855-9835.jpg?w=826") no-repeat center/cover;
+  }
+  /* https://img.freepik.com/free-photo/healthcare-equipment-office-supplies-with-succulent-plant-green-backdrop_23-2148213947.jpg?w=740 */

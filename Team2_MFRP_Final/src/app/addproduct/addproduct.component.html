@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm navbar-dark" style="height: 90px;">
+    <h1 class="title" style="margin-right: 70px;">Go Pharmeasy</h1>
+    <a href=""  routerLink="addproduct" style="text-decoration: none;margin-right: 600px;">Add Product</a>
+    <button routerLink="/login" class="btn mx-2" style="text-decoration: none;background-color: rgb(186, 221, 221)">Logout</button>
+</nav> 
+<body>
+    <div>
+        <br>
+        <div>
+            <button routerLink="/admin" class="btn btn-primary" >Back to Home</button>
+        </div>
+        <form class="container" style="width: 100%;margin-top: 2%;background-color:rgb(214, 227, 245);  border: 1px solid black;"
+          #productPost="ngForm" (ngSubmit)="onSubmit(productPost.value)">
+          <div style="margin: 5%;" class="form-group">
+            <input class="form-control" type="text" name="ProductId" ngModel placeholder="Product ID" required><br>
+            <input class="form-control" type="text" name="ProductName" ngModel placeholder="Product Name" required ><br>
+            <input class="form-control" type="text" name="Img" ngModel placeholder="Image" required><br>
+            <input class="form-control" type="text" name="Brand" ngModel placeholder="Brand" required><br>
+            <input class="form-control" type="text" name="Drug" ngModel placeholder="Drug" required><br>
+            <input class="form-control" type="text" name="Price" ngModel placeholder="Price" required><br>
+            <input class="form-control" class="form-control" type="date" name="ManufacturingDate" ngModel placeholder="Manufacturing Date" required><br>
+            <input class="form-control" type="date" name="ExpiryDate" ngModel placeholder="Expiry Date" required><br>
+            <input class="form-control" type="text" name="qnt" ngModel placeholder="Quantity" required><br>
+            <input class="form-control" type="text" name="description" ngModel placeholder="Description" required><br>
+            <input class="form-control" type="text" name="category" ngModel placeholder="Category" required><br>
+            <button class="form-control" type="submit" style="background-color:green;color: #f2f2f2;" [disabled]="!productPost.valid">Submit</button>
+          </div>
+        </form>
+        
+      </div>
+</body>

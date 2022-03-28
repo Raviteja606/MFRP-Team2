@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" />
+<nav class="navbar navbar-expand-sm navbar-dark" style="height: 90px;">
+    <h1 class="title" style="font-family: cursive;">Go Pharmeasy</h1>
+    <a routerLink="/home" style="text-decoration: none;margin-left: 50px;">Home</a>
+    <a href="" routerLink="/products" style="text-decoration: none;margin-left: 50px;">Products</a>
+    <a href="" routerLink="/contactus" style="text-decoration: none;margin-left: 50px;margin-right: 350px;">Contact
+        us</a>
+    <button routerLink="/cart" class="byn btn">
+        <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+        <div style="font-size: 14px;" class="badge bg-danger">{{totalItem}}</div>
+    </button>
+    <button routerLink="/login" class="btn  mx-2" style="text-decoration: none;background-color: rgb(186, 221, 221)">Logout</button>
+</nav>
+
+<body style="background-color: whitesmoke ;margin-top:-1.6%;">
+    <br><br>
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)"
+            placeholder="search products">
+    </div>
+
+    <br />
+    <div class="card-top container-fluid">
+        <div class="container d-flex">
+            <div class="item">
+                <a (click)="filter('')">
+                    <img class="imgs" src="https://www.degustabox.com/en/public/images/1466151137_9-UK-SEP-14.png"
+                        alt="">
+                    <h6>All products</h6>
+                </a>
+            </div>
+            <div class="item">
+                <a (click)="filter('covid')">
+                    <img src="https://www.sarrattofficesupplies.co.uk/wp-content/uploads/2020/05/Covid-19-Safety-Essentials-1.png"
+                        alt="">
+                    <h6>Covid Essentials</h6>
+                </a>
+            </div>
+            <div class="item">
+                <a (click)="filter('med')">
+                    <img src="https://static.vecteezy.com/system/resources/previews/000/304/305/original/a-set-of-medicine-vector.jpg"
+                        alt="">
+                    <h6>Medicines</h6>
+                </a>
+            </div>
+        </div>
+    </div>
+<hr>
+    <div class="container-fluid padding">
+        <h1></h1>
+        <p></p>
+        <br />
+        <div class="row padding">
+            <div class="col-md-3 mb-2 mt-2 " *ngFor="let prod of filterCategory | filter:searchKey:'ProductName'">
+                <div class="card box-shadow">
+                    <a routerLink="/productinfo/{{prod._id}}"><img class="card-img-top" src="{{prod.Img}}"
+                            style="height:200px" alt="p1"></a>
+                    <div class="card-body" style="text-align: center;background-color:rgb(214, 227, 245)">
+                        <h5 class="card-title"><strong>{{prod.ProductName}}</strong></h5>
+                        <div class="card-text" style="justify-content: center;">
+                            <h6><strong>Price:</strong> ₹{{prod.Price * prod.qnt|number}}</h6>
+                            <button class="btn1" (click)="dec(prod)">-</button>&nbsp;
+                            <span class="count1">{{prod.qnt}}</span>&nbsp;
+                            <button class="btn2" (click)="inc(prod)">+</button>
+                        </div>
+                        <br>
+                        <button class="button" (click)="addtocart(prod)">Add to cart</button>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <br /><br />
+
+
+</body>

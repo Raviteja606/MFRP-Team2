@@ -1,0 +1,28 @@
+a:hover {
+    border-radius: 10px;
+    color:lightskyblue
+  }
+  a{
+      color:#ffff
+  }
+  /*code to change background color*/
+   
+  .navbar {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 149, 166, 1) 0%,
+      rgb(25, 51, 73) 100%
+    );
+    
+  }
+  h1{
+      font-family: cursive;
+  }
+  .title{
+      margin-left: 50px;
+      color: #fff;
+  }
+  .text-center{
+    background: url("https://img.freepik.com/free-vector/clean-medical-background_53876-97927.jpg?w=740")no-repeat center/cover
+  }
+  
